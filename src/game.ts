@@ -1,6 +1,4 @@
 import * as BABYLON from 'babylonjs';
-import * as GUI from 'babylonjs-gui';
-
 export class Game {
 
     private _canvas: HTMLCanvasElement;
