@@ -6,7 +6,7 @@ export class Game {
     private _canvas: HTMLCanvasElement;
     private _engine: BABYLON.Engine;
     private _scene: BABYLON.Scene;
-    private _camera: BABYLON.ArcRotateCamera;
+    private _camera: BABYLON.FreeCamera;
     private _light: BABYLON.Light;
 
     constructor(canvasElement: string) {
@@ -32,9 +32,7 @@ export class Game {
 
         this._light.intensity = 0.7;
 
-        var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, this._scene);
-
-        sphere.position.y = 1;
+        BABYLON.SceneLoader.ImportMesh(null,"./assets/","cube.glb",this._scene);
 
         var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, this._scene);
 
